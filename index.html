@@ -1475,15 +1475,35 @@
         overflow: hidden;
       }
 
-      .locations {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: nowrap;
-        gap: 5px;
-        font-size: clamp(.60rem, 2.4vw, .72rem);
-        letter-spacing: .10em;
-        overflow: hidden;
-      }
+  @media (max-width: 720px) {
+    .locations {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      font-size: clamp(.62rem, 2.5vw, .74rem);
+      letter-spacing: .08em;
+      line-height: 1.55;
+      overflow: visible;
+      white-space: normal;
+      text-align: center;
+    }
+
+  .locations span {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .locations span:not(:last-child)::after {
+    margin-left: 8px;
+  }
+
+  html[dir="rtl"] .locations {
+    direction: ltr;
+  }
+}
 
       .locations span:not(:last-child)::after {
         margin-left: 5px;
@@ -2210,7 +2230,7 @@
         <span data-i18n="locKalba">Kalba</span>
         <span data-i18n="locMasafi">Masafi</span>
         <span data-i18n="locMirbah">Mirbah</span>
-        <span data-i18n="locSheikhKhalifaHospitalAlFaseel">Sheikh Khalifa Hospital- Al Faseel</span>
+        <span data-i18n="locSheikhKhalifaHospitalAlFaseel">Sheikh Khalifa Hospital - Al Faseel</span>
       </div>
       <a class="btn map-small" href="https://maps.app.goo.gl/9cqc8eHafk4c1wEr7" target="_blank" rel="noopener noreferrer" data-i18n="findLocation">Find Location</a>
       <button class="lang-btn" type="button" id="langToggle">عربي</button>
